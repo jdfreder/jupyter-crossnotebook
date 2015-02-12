@@ -64,7 +64,7 @@ define(function(require) {
                 var last_selected = $(selected[selected.length-1]).data('cell');
                 var index = IPython.notebook.find_cell_index(last_selected);
                 cells.forEach(function(cellJSON) {
-                    var cell = IPython.notebook.insert_cell_below('code', index);
+                    var cell = IPython.notebook.insert_cell_below(cellJSON.cell_type, index);
                     cell.fromJSON(cellJSON);
                     index++;
                 });
